@@ -1,39 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
-    <title>Simple Snake Game</title>
+    <meta charset="UTF-8">
+    <title>Nexa Topup Service</title>
     <style>
-        body { text-align: center; background: #222; color: white; }
-        canvas { border: 5px solid #fff; background: #000; }
+        body { font-family: sans-serif; background: #f4f4f9; padding: 20px; }
+        .container { max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        input, select { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+        button { width: 100%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
     </style>
 </head>
 <body>
-    <h1>งูหรรษา 🐍</h1>
-    <canvas id="gameCanvas" width="400" height="400"></canvas>
-
-    <script>
-        const canvas = document.getElementById("gameCanvas");
-        const ctx = canvas.getContext("2d");
-
-        let box = 20;
-        let snake = [{x: 10 * box, y: 10 * box}];
-        let food = {x: Math.floor(Math.random() * 20) * box, y: Math.floor(Math.random() * 20) * box};
-        let d = "RIGHT";
-
-        document.addEventListener("keydown", (e) => {
-            if(e.keyCode == 37 && d != "RIGHT") d = "LEFT";
-            else if(e.keyCode == 38 && d != "DOWN") d = "UP";
-            else if(e.keyCode == 39 && d != "LEFT") d = "RIGHT";
-            else if(e.keyCode == 40 && d != "UP") d = "DOWN";
-        });
-
-        function draw() {
-            ctx.fillStyle = "black";
-            ctx.fillRect(0, 0, 400, 400);
-
-            for(let i = 0; i < snake.length; i++) {
-                ctx.fillStyle = (i == 0) ? "green" : "white";
-                ctx.fillRect(snake[i].x, snake[i].y, box, box);
+    <div class="container">
+        <h2>🎮 ระบบเติมเกม</h2>
+        <input type="text" placeholder="ID เกม / Username">
+        <select>
+            <option>แพ็กเกจ 1 - 50 บาท</option>
+            <option>แพ็กเกจ 2 - 100 บาท</option>
+        </select>
+        <button onclick="alert('กำลังดำเนินการ...')">ชำระเงิน</button>
+    </div>
+</body>
+</html>
             }
 
             ctx.fillStyle = "red";
